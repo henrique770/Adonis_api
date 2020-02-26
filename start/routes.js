@@ -9,4 +9,6 @@ Route.post("sessions", "SessionController.store");
 Route.post("passwords", "ForgotPasswordController.store");
 Route.put("passwords", "ForgotPasswordController.update");
 
+//Rota para acessar o arquivo
+Route.get("/files/:id", "FileController.show");
 Route.post("/files", "FileController.store");
