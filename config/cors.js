@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 module.exports = {
   /*
@@ -16,7 +16,9 @@ module.exports = {
   | Function - Receives the current origin and should return one of the above values.
   |
   */
+  // quais dominios podem ter acesso a aplicação
   origin: false,
+  // origin: ['rocketseat.com.br', 'service.rocketseat.com.br'],
 
   /*
   |--------------------------------------------------------------------------
@@ -29,7 +31,7 @@ module.exports = {
   | Array - An array of allowed methods
   |
   */
-  methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
 
   /*
   |--------------------------------------------------------------------------
@@ -47,6 +49,8 @@ module.exports = {
   | Function - Receives the current header and should return one of the above values.
   |
   */
+
+  // quais são os tipos de header na aplicação
   headers: true,
 
   /*
@@ -84,4 +88,4 @@ module.exports = {
   |
   */
   maxAge: 90
-}
+};
