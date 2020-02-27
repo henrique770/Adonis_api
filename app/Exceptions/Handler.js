@@ -1,4 +1,8 @@
 "use strict";
+
+const Raven = require("raven");
+const Config = use("Config");
+
 //variaveis ambiente
 const Env = use("Env");
 // formatador de erro
@@ -50,7 +54,8 @@ class ExceptionHandler extends BaseExceptionHandler {
    * @return {void}
    */
   async report(error, { request }) {
-    console.log(error);
+    Raven.config(Config.get("services.sentry.dsn"));
+    Raven.captureException(error);
   }
 }
 
