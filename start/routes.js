@@ -11,4 +11,9 @@ Route.put("passwords", "ForgotPasswordController.update");
 
 //Rota para acessar o arquivo
 Route.get("/files/:id", "FileController.show");
-Route.post("/files", "FileController.store");
+
+//Rotas só são acessadas quando o usuário estiver logado
+Route.group(() => {
+  Route.post("/files", "FileController.store");
+  Route.resource("projects", "ProjectController").apiOnly();
+}).middleware(["auth"]);
